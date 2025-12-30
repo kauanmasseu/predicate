@@ -1,7 +1,6 @@
 package application;
 
 import entities.Product;
-import util.ProductPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class Program {
         list.add(new Product("Tablet", 550.50));
         list.add(new Product("HD case", 80.90));
 
-        list.removeIf(new ProductPredicate());
+        list.removeIf(Product::staticProductPredicate);
 
         for(Product p : list) {
             System.out.println(p);
